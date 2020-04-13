@@ -1,0 +1,22 @@
+<div class="p-5">
+  <div *ngIf="!isStarted">
+    <h1>Egzamin z chemii</h1>
+    <button class="btn btn-primary" (click)="isStarted = true">
+      Rozpocznij
+    </button>
+  </div>
+  <div class="p-5" *ngIf="isStarted">
+    <h3>Punkty:</h3>
+    <div class="d-flex flex-row w-100 pb-5">
+      <div class="kitty" *ngFor="let i of success"></div>
+    </div>
+    <app-symbol-to-data
+      [AtomicNumber]="atomicNumber"
+      (submit)="onSubmit($event)"
+      #atomic
+    ></app-symbol-to-data>
+    <button class="btn btn-primary" *ngIf="showButton" (click)="next()">
+      Następny
+    </button>
+  </div>
+</div>

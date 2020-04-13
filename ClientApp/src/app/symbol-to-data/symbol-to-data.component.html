@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-4 py-4">
+    <div class="atomic border rounded float-sm-right float-left">
+      <div class="atomic-number">
+        {{ atom.number }}
+      </div>
+      <div class="atomic-mass">
+        {{ AtomicMass }}
+      </div>
+      <div class="atomic-symbol">
+        {{ atom.symbol }}
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div *ngFor="let title of description; index as i">
+      <div class="form-group" *ngIf="visible[i]">
+        <label>{{ title }}</label>
+        <input
+          type="text"
+          [(ngModel)]="valueArr[i]"
+          class="form-control"
+          [class.border-success]="correct[i] === true"
+          [class.bg-success]="correct[i] === true"
+          [class.text-white]="correct[i] !== null"
+          [class.border-danger]="correct[i] === false"
+          [class.bg-danger]="correct[i] === false"
+        />
+      </div>
+    </div>
+    <div class="row" style="height:40px">
+    <button class="btn btn-success mr-1" (click)="onSubmit()" *ngIf="!block">
+      Wyślij
+    </button></div>
+  </div>
+</div>

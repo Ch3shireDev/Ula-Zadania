@@ -1,0 +1,7 @@
+.kitty{
+  background-image:url(/assets/kitty.svg);
+  width:20px !important;
+  max-width: 20px;
+  height:20px !important;
+  display: inline-block;
+}
