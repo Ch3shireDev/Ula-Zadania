@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 html, body{
-  background:url(/assets/wallpaper.png);
+  background:url(/ula-zadania/assets/wallpaper.png);
   background-size: cover;
   min-height: 100vh;
 }
